@@ -1,7 +1,7 @@
 package com.example.springcloudgateway.controller.java;
 
-import com.example.springcloudgateway.exception.SeeOtherException;
-import jakarta.ws.rs.core.Response;
+import com.example.springcloudgateway.exception.CustomException1;
+import com.example.springcloudgateway.exception.CustomException2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class JavaExceptionController {
 
     @RequestMapping("/exception/response-status")
-    String handleExceptionUsingResponseStatusAnnotation() throws SeeOtherException {
-        throw new SeeOtherException();
+    String handleExceptionUsingResponseStatusAnnotation() throws CustomException1 {
+        throw new CustomException1();
     }
 
     @RequestMapping("/exception/exception-handler-in-controller")
-    String handleExceptionUsingExceptionHandlerAnnotationInController() throws ClassNotFoundException {
-        throw new ClassNotFoundException();
+    String handleExceptionUsingExceptionHandlerAnnotationInController() throws CustomException2 {
+        throw new CustomException2();
     }
 
     @ResponseStatus(value= HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(ClassNotFoundException.class)
-    String forbidden() {
+    @ExceptionHandler(CustomException2.class)
+    String customException2() {
 
-        return "Forbidden !";
+        return "CustomException2 thrown from JavaExceptionController.class !";
     }
 
     @RequestMapping("/exception/controller-advice")

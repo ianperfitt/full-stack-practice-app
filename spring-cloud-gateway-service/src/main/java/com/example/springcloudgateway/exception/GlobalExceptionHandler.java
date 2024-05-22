@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class GlobalControllerExceptionHandler {
+public class GlobalExceptionHandler {
 
-    @ResponseStatus(HttpStatus.CONFLICT)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<?> handleConflict() {
-        return new ResponseEntity("CONFLICT !", HttpStatus.CONFLICT);
+        return new ResponseEntity("NullPointerException thrown from ControllerAdvice.class !", HttpStatus.BAD_REQUEST);
     }
 }
