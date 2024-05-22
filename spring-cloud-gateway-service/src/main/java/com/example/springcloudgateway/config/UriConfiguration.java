@@ -23,18 +23,22 @@ class UriConfiguration {
     }
 
     public String getAngularPath() {
+
         return angularPath;
     }
 
     public void setAngularPath(String angularPath) {
+
         this.angularPath = angularPath;
     }
 
     public String getSqlPath() {
+
         return sqlPath;
     }
 
     public void setSqlPath(String sqlPath) {
+
         this.sqlPath = sqlPath;
     }
 }

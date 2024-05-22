@@ -1,4 +1,4 @@
-package com.example.springcloudgateway.controller;
+package com.example.springcloudgateway.controller.fallback;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

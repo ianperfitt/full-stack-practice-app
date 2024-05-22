@@ -1,11 +1,11 @@
-package com.example.springcloudgateway.controller;
+package com.example.springcloudgateway.controller.angular;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/sql")
-public class SQLController {
+@RequestMapping("/angular")
+public class AngularController {
 
     @RequestMapping("/helloworld")
     String helloWorld() {

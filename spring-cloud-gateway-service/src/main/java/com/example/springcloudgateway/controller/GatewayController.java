@@ -2,7 +2,6 @@ package com.example.springcloudgateway.controller;
 
 import com.example.springcloudgateway.config.UriConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GatewayController {
 
     @Bean
-    public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
+    public org.springframework.cloud.gateway.route.RouteLocator customRouteLocator(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
         String javaHttpUri = uriConfiguration.getJavaPath();
         String angularHttpUri = uriConfiguration.getAngularPath();
         String sqlHttpUri = uriConfiguration.getSqlPath();
