@@ -10,12 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableConfigurationProperties(UriConfiguration.class)
 @RestController
 public class GatewayController {
+
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
         String javaHttpUri = uriConfiguration.getJavaPath();
+        String angularHttpUri = uriConfiguration.getAngularPath();
+        String sqlHttpUri = uriConfiguration.getSqlPath();
         return builder.routes()
                 .route("java_path_route", r -> r.path("/helloworld")
                         .uri(javaHttpUri))
+                .route("angular_path_route", r -> r.path("/helloworld")
+                        .uri(angularHttpUri))
+                .route("sql_path_route", r -> r.path("/helloworld")
+                        .uri(sqlHttpUri))
                 // used for fallback forwarding example
                 .route(p -> p
                         .host("*.circuitbreaker.com")
