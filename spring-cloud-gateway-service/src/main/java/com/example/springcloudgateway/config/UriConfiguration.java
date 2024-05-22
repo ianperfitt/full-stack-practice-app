@@ -6,15 +6,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public
 class UriConfiguration {
 
-    private String httpbin = "http://httpbin.org:80";
+    private String javaPath = "http://localhost:8080/java";
 
-    public String getHttpbin() {
+    public String getJavaPath() {
 
-        return httpbin;
+        return javaPath;
     }
 
-    public void setHttpbin(String httpbin) {
+    public void setJavaPath(String javaPath) {
 
-        this.httpbin = httpbin;
+        this.javaPath = javaPath;
     }
 }

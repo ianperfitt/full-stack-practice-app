@@ -2,14 +2,13 @@ package com.example.springcloudgateway.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 @RestController
-public class FallbackController {
+@RequestMapping("/java")
+public class JavaController {
 
-    @RequestMapping("/fallback")
-    public Mono<String> fallback() {
-
-        return Mono.just("fallback is working !");
+    @RequestMapping("/helloworld")
+    String helloWorld() {
+        return "hello world";
     }
 }

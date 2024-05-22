@@ -9,22 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @EnableConfigurationProperties(UriConfiguration.class)
 @RestController
-public class GatewaysController {
+public class GatewayController {
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
-        String httpUri = uriConfiguration.getHttpbin();
+        String javaHttpUri = uriConfiguration.getJavaPath();
         return builder.routes()
-                .route(p -> p
-                        .path("/get")
-                        .filters(f -> f.addRequestHeader("Hello", "World"))
-                        .uri(httpUri))
+                .route("java_path_route", r -> r.path("/helloworld")
+                        .uri(javaHttpUri))
+                // used for fallback forwarding example
                 .route(p -> p
                         .host("*.circuitbreaker.com")
-                        .filters(f -> f
-                                .circuitBreaker(config -> config
-                                        .setName("mycmd")
-                                        .setFallbackUri("forward:/fallback")))
-                        .uri(httpUri))
+                        .filters(f -> f.circuitBreaker(config -> config
+                                .setName("mycmd")
+                                .setFallbackUri("forward:/fallback")))
+                        .uri("http://httpbin.org:80"))
                 .build();
     }
 }
