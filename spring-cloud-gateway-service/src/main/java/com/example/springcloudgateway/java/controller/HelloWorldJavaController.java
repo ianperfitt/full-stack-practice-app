@@ -1,7 +1,7 @@
 package com.example.springcloudgateway.java.controller;
 
 
-import com.example.springcloudgateway.java.service.JavaService;
+import com.example.springcloudgateway.java.service.HelloWorldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class HelloWorldJavaController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldJavaController.class);
 
     @Autowired
-    private JavaService javaService;
+    private HelloWorldService javaService;
 
     @RequestMapping("/helloworld")
     ResponseEntity<?> helloWorld() {

@@ -1,4 +1,4 @@
-package com.example.springcloudgateway.java.repository.feign;
+package com.example.springcloudgateway.java.repository.feign.decoder.config;
 
 import feign.codec.Decoder;
 import org.slf4j.Logger;
