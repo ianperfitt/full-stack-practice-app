@@ -1,6 +1,5 @@
-package com.example.springcloudgateway.controller;
+package com.example.springcloudgateway.config;
 
-import com.example.springcloudgateway.config.UriConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -23,7 +22,7 @@ public class GatewayController {
         String angularHttpUri = uriConfiguration.getAngularPath();
         String sqlHttpUri = uriConfiguration.getSqlPath();
         return builder.routes()
-                .route("java_path_route", r -> r.path("/helloworld")
+                .route("java_path_route", r -> r.path("/*")
                         .uri(javaHttpUri))
                 .route("angular_path_route", r -> r.path("/helloworld")
                         .uri(angularHttpUri))

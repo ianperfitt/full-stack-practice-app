@@ -10,12 +10,16 @@ public class JavaRepositoryImpl implements JavaRepository{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JavaServiceImpl.class);
 
-
     @Override
     public String response() {
 
         LOGGER.info(String.format("JavaRepositoryImpl -> Returning 'autowired' for appending in calling service"));
 
         return "autowired";
+    }
+
+    @Override
+    public String helloWorld() {
+        return "hello world java";
     }
 }

@@ -1,8 +1,8 @@
-package com.example.springcloudgateway.controller.java;
+package com.example.springcloudgateway.java.controller;
 
-import com.example.springcloudgateway.controller.GatewayController;
-import com.example.springcloudgateway.exception.CustomException1;
-import com.example.springcloudgateway.exception.CustomException2;
+import com.example.springcloudgateway.config.GatewayController;
+import com.example.springcloudgateway.java.exception.CustomException1;
+import com.example.springcloudgateway.java.exception.CustomException2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+// TODO these endpoints should make OpenFeign call to Java microservice
 @RestController
 @RequestMapping("/java")
 public class JavaExceptionController {
@@ -20,7 +21,7 @@ public class JavaExceptionController {
     private static final Logger LOGGER = LoggerFactory.getLogger(GatewayController.class);
 
     @RequestMapping("/exception/response-status")
-    String handleExceptionUsingResponseStatusAnnotation() throws CustomException1 {
+    void handleExceptionUsingResponseStatusAnnotation() throws CustomException1 {
 
         LOGGER.info(String.format("JavaExceptionController -> throwing Exception CustomException1"));
 
@@ -28,7 +29,7 @@ public class JavaExceptionController {
     }
 
     @RequestMapping("/exception/exception-handler-in-controller")
-    String handleExceptionUsingExceptionHandlerAnnotationInController() throws CustomException2 {
+    ResponseEntity<?> handleExceptionUsingExceptionHandlerAnnotationInController() throws CustomException2 {
 
         LOGGER.info(String.format("JavaExceptionController -> throwing Exception CustomException2"));
 
@@ -37,11 +38,13 @@ public class JavaExceptionController {
 
     @ResponseStatus(value= HttpStatus.BAD_REQUEST)
     @ExceptionHandler(CustomException2.class)
-    String customException2() {
+    ResponseEntity<?> customException2() {
 
         LOGGER.info(String.format("JavaExceptionController -> handling Exception CustomException1 in JavaExceptionController"));
 
-        return "CustomException2 thrown from JavaExceptionController.class !";
+        String s = "CustomException2 thrown from JavaExceptionController.class !";
+        ResponseEntity<?> re = new ResponseEntity(s,HttpStatus.BAD_REQUEST);
+        return re;
     }
 
     @RequestMapping("/exception/controller-advice")

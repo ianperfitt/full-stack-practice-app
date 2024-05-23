@@ -1,6 +1,5 @@
-package com.example.springcloudgateway.feign;
+package com.example.springcloudgateway.java.repository.feign;
 
-import com.example.springcloudgateway.controller.GatewayController;
 import feign.codec.Decoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

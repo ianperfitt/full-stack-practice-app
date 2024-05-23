@@ -1,7 +1,6 @@
-package com.example.springcloudgateway.controller.java;
+package com.example.springcloudgateway.java.controller;
 
-import com.example.springcloudgateway.controller.GatewayController;
-import com.example.springcloudgateway.service.JavaService;
+import com.example.springcloudgateway.java.service.JavaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 // controller for practicing @Autowired concepts
 @RestController
+@RequestMapping("/java")
 public class AutowiredController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AutowiredController.class);
@@ -19,10 +19,10 @@ public class AutowiredController {
     @Autowired
     private JavaService javaService;
 
-    @RequestMapping("java/autowired")
+    @RequestMapping("/autowired")
     public ResponseEntity<?> respond() {
 
-        LOGGER.info(String.format("AutowiredController -> In AutowiredController and about to call JavaService.autowire()"));
+        LOGGER.info(String.format("AutowiredController -> About to call JavaService.autowire()"));
 
         String s = javaService.autowire();
         ResponseEntity<?> response = new ResponseEntity(s, HttpStatus.OK);

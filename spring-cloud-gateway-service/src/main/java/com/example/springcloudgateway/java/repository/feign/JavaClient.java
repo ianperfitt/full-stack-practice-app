@@ -1,4 +1,4 @@
-package com.example.springcloudgateway.feign;
+package com.example.springcloudgateway.java.repository.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,4 +9,7 @@ public interface JavaClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/java/autowire")
     String autowire();
+
+    @RequestMapping(method = RequestMethod.GET, value = "/java/helloworld")
+    String helloWorld();
 }

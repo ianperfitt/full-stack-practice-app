@@ -52,4 +52,9 @@ public class JavaServiceImpl implements JavaService {
 
         return sb.toString();
     }
+
+    @Override
+    public String helloWorld() {
+        return javaRepositoryField.helloWorld();
+    }
 }
