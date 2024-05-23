@@ -1,11 +1,15 @@
 package com.example.javapracticemicroservice.service;
 
 import com.example.javapracticemicroservice.repository.JavaRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class JavaServiceImpl implements JavaService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(JavaServiceImpl.class);
 
     private JavaRepository javaRepositoryConstructor;
 
@@ -30,6 +34,8 @@ public class JavaServiceImpl implements JavaService {
     }
 
     public String response() {
+
+        LOGGER.info(String.format("JavaServiceImpl -> Constructing responses using constructor, setter & field injection"));
 
         String constructorResponse = javaRepositoryConstructor.response();
         String setterResponse = javaRepositorySetter.response();
