@@ -44,7 +44,7 @@ public class HttpStatusCodeController {
         return response;
     }
 
-    @RequestMapping("/resourceNotFound")
+    @RequestMapping("/resource-not-found")
     public ResponseEntity<?> resourceNotFound() {
 
         LOGGER.info(String.format("HttpStatusCodeController -> About to call HttpStatusCodeService.resourceNotFound()"));
@@ -58,7 +58,7 @@ public class HttpStatusCodeController {
 
         LOGGER.info(String.format("HttpStatusCodeController -> About to call HttpStatusCodeService.internalServerError()"));
 
-        ResponseEntity<?> response = httpStatusCodeServiceService.badRequest();
+        ResponseEntity<?> response = httpStatusCodeServiceService.internalServerError();
         return response;
     }
 
