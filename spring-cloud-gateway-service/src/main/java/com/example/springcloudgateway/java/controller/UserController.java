@@ -28,4 +28,12 @@ public class UserController {
         ResponseEntity<?> re = new ResponseEntity(u, HttpStatus.CREATED);
         return re;
     }
+
+    @RequestMapping("/deleteian")
+    ResponseEntity<?> addUser() {
+
+        userService.deleteUser();
+        ResponseEntity<?> re = new ResponseEntity("Ian has been deleted !", HttpStatus.OK);
+        return re;
+    }
 }

@@ -5,4 +5,6 @@ import com.example.springcloudgateway.java.entity.User;
 public interface UserService {
 
     User createUser(User u);
+
+    void deleteUser();
 }
