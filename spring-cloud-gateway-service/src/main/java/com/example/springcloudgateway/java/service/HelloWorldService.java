@@ -1,6 +1,6 @@
 package com.example.springcloudgateway.java.service;
 
-import com.example.springcloudgateway.config.GatewayController;
+import com.example.springcloudgateway.GatewayController;
 import com.example.springcloudgateway.java.repository.feign.clients.HelloWorldFeignClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

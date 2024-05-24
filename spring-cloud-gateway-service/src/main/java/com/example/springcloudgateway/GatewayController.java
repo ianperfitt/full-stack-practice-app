@@ -1,5 +1,6 @@
-package com.example.springcloudgateway.config;
+package com.example.springcloudgateway;
 
+import com.example.springcloudgateway.config.UriConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

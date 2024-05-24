@@ -1,6 +1,6 @@
 package com.example.springcloudgateway.java.controller;
 
-import com.example.springcloudgateway.config.GatewayController;
+import com.example.springcloudgateway.GatewayController;
 import com.example.springcloudgateway.java.exception.CustomException1;
 import com.example.springcloudgateway.java.exception.CustomException2;
 import org.slf4j.Logger;
