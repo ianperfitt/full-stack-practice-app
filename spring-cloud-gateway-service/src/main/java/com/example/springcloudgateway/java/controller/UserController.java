@@ -48,4 +48,13 @@ public class UserController {
         ResponseEntity<?> re = new ResponseEntity(dto, HttpStatus.OK);
         return re;
     }
+
+    @GetMapping("/rest-template-exchange")
+    ResponseEntity<?> resttemplateExchange() {
+
+        RestTemplateDto dto = userService.resttemplateExchange();
+
+        ResponseEntity<?> re = new ResponseEntity(dto, HttpStatus.OK);
+        return re;
+    }
 }

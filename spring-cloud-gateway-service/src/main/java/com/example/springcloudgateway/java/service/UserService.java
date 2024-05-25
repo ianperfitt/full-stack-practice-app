@@ -10,4 +10,6 @@ public interface UserService {
     void deleteUser();
 
     RestTemplateDto resttemplate();
+
+    RestTemplateDto resttemplateExchange();
 }

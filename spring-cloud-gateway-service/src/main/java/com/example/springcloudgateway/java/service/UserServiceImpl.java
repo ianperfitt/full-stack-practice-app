@@ -3,10 +3,10 @@ package com.example.springcloudgateway.java.service;
 import com.example.springcloudgateway.java.dto.RestTemplateDto;
 import com.example.springcloudgateway.java.entity.User;
 import com.example.springcloudgateway.java.repository.UserRepository;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -49,6 +49,18 @@ public class UserServiceImpl implements UserService {
         ResponseEntity<RestTemplateDto> responseEntity = restTemplate
                 .getForEntity("http://localhost:8081/java/resttemplate",
                         RestTemplateDto.class);
+
+        RestTemplateDto restTemplateDto = responseEntity.getBody();
+        return restTemplateDto;
+    }
+
+    @Override
+    public RestTemplateDto resttemplateExchange() {
+
+        LOGGER.info(String.format("UserServiceImpl -> About to make API call using REST Template Exchange"));
+
+        ResponseEntity<RestTemplateDto> responseEntity = restTemplate
+                .exchange("http://localhost:8081/java/rest-template-exchange", HttpMethod.GET,null, RestTemplateDto.class);
 
         RestTemplateDto restTemplateDto = responseEntity.getBody();
         return restTemplateDto;
