@@ -20,7 +20,18 @@ public class RestTemplateController {
 
         LOGGER.info(String.format("RestTemplateController -> returning RestTemplateDto with message !"));
 
-        RestTemplateDto dto = new RestTemplateDto("rest template example !");
+        RestTemplateDto dto = new RestTemplateDto("rest template simple example !");
+
+        ResponseEntity<RestTemplateDto> re = new ResponseEntity<RestTemplateDto>(dto, HttpStatus.OK);
+        return re;
+    }
+
+    @GetMapping("/rest-template-exchange")
+    ResponseEntity<RestTemplateDto> resttemplateExchange() {
+
+        LOGGER.info(String.format("RestTemplateController -> returning RestTemplateDto with message !"));
+
+        RestTemplateDto dto = new RestTemplateDto("rest template exchange example !");
 
         ResponseEntity<RestTemplateDto> re = new ResponseEntity<RestTemplateDto>(dto, HttpStatus.OK);
         return re;
