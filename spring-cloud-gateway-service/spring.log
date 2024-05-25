@@ -1562,3 +1562,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2024-05-25T16:06:18.536-05:00  INFO 25134 --- [spring-cloud-gateway-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2024-05-25T16:11:18.538-05:00  INFO 25134 --- [spring-cloud-gateway-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2024-05-25T16:16:18.550-05:00  INFO 25134 --- [spring-cloud-gateway-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-05-25T16:21:18.550-05:00  INFO 25134 --- [spring-cloud-gateway-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
