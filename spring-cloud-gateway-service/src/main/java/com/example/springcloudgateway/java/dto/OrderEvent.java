@@ -1,4 +1,4 @@
-package com.example.kafka_base_domains.dto;
+package com.example.springcloudgateway.java.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

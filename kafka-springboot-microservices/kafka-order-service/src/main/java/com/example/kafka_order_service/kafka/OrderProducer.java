@@ -1,6 +1,6 @@
 package com.example.kafka_order_service.kafka;
 
-import com.example.kafka_order_service.dto.OrderEvent;
+import com.example.kafka_base_domains.OrderEvent;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +26,7 @@ public class OrderProducer {
 
     public void sendMessage(OrderEvent event) {
         LOGGER.info(String.format("Order event => %s", event.toString()));
+        LOGGER.info(String.format("Order event topic => %s", topic.name()));
 
         // create the message
         Message<OrderEvent> message = MessageBuilder

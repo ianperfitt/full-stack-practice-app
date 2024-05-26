@@ -10,5 +10,4 @@ public class KafkaBaseDomainsApplication {
 
 		SpringApplication.run(KafkaBaseDomainsApplication.class, args);
 	}
-
 }
