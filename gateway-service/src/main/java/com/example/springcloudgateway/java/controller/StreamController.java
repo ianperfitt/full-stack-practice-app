@@ -81,6 +81,10 @@ public class StreamController {
         reduceList.add(i);
         streamMap.put("1,1,2,3,7,2,5,-1 after stream.reduce() -> ", reduceList);
 
+        // stream.forEach() example
+        l.stream()
+                .forEach(e -> System.out.println(e));
+
         ResponseEntity<?> re = new ResponseEntity(streamMap, HttpStatus.OK);
         return re;
     }
