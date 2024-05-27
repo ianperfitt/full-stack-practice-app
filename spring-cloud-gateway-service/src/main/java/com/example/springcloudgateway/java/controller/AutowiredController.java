@@ -1,7 +1,6 @@
 package com.example.springcloudgateway.java.controller;
 
 import com.example.springcloudgateway.java.service.AutowiredService;
-import com.example.springcloudgateway.java.service.HelloWorldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
