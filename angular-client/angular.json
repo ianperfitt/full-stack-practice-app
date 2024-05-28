@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-practice-app": {
+    "angular-client": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-practice-app",
+            "outputPath": "dist/angular-client",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-practice-app:build:production"
+              "buildTarget": "angular-client:build:production"
             },
             "development": {
-              "buildTarget": "angular-practice-app:build:development"
+              "buildTarget": "angular-client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-practice-app:build"
+            "buildTarget": "angular-client:build"
           }
         },
         "test": {
@@ -96,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "6ae8f41e-1944-459e-a0ed-e824a3281188"
   }
 }

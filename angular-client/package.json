@@ -1,5 +1,5 @@
 {
-  "name": "angular-practice-app",
+  "name": "angular-client",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-practice-app": "node dist/angular-practice-app/server/server.mjs"
+    "serve:ssr:angular-client": "node dist/angular-client/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +21,11 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.4",
+    "@ngrx/effects": "^17.2.0",
+    "@ngrx/store": "^17.2.0",
+    "@ngrx/store-devtools": "^17.2.0",
     "express": "^4.18.2",
-    "rxjs": "~7.8.0",
+    "rxjs": "^7.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
