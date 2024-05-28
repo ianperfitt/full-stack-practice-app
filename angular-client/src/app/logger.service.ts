@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class LoggerService {
 
   log(msg: unknown) {
-    console.log(msg);
+    console.log("LOG --- " + msg);
   }
 
   error(msg: unknown) {
-    console.error(msg);
+    console.error("LOG --- " +  msg);
   }
 
   warn(msg: unknown) {
-    console.log(msg);
+    console.log("LOG --- " +  msg);
   }
 }
