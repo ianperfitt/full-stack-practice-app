@@ -20,6 +20,6 @@ public class HelloWorldAngularController {
         LOGGER.info(String.format("HelloWorldAngularController -> Printing hello world from Angular hello world controller"));
 
         ResponseEntity<?> re = new ResponseEntity("hello world angular", HttpStatus.OK);
-        return "hello world angular";
+        return "hello world";
     }
 }
